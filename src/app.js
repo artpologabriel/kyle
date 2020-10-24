@@ -6,7 +6,6 @@ const forecast = require('./utils/forecast')
 
 const app = express()
 
-
 // Define paths for Express config
 const publicDirectoryPath = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, '../templates/views')
@@ -41,7 +40,13 @@ app.get('/help', (req, res) => {
         name: 'kyle'
     })
 })
-
+app.get('/add_data', (req, res) => {
+    res.render('help', {
+        helpText: 'This is some helpful text.',
+        title: 'Help',
+        name: 'kyle'
+    })
+})
 app.get('/weather', (req, res) => {
     if (!req.query.address) {
         return res.send({
