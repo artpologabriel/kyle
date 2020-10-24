@@ -6,7 +6,7 @@ const databaseName = 'task-manager'
 
 //useNewUrlParser: true
 
-MongoClient.connect(connectionURL, { useUnifiedTopology: true }, (error, client) => {
+MongoClient.connect(connectionURL, { useNewUrlParser: true }, (error, client) => {
     if (error) {
         return console.log('Unable to connect to database!')
     }
