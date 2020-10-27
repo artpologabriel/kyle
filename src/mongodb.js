@@ -3,7 +3,7 @@
 const mongodb = require('mongodb')
 const MongoClient = mongodb.MongoClient
 
-const connectionURL = 'mongodb://3.20.189.143'
+const connectionURL = 'mongodb://127.0.0.1:27017'
 const databaseName = 'task-manager'
 
 MongoClient.connect(connectionURL, { useNewUrlParser: true }, (error, client) => {
@@ -24,21 +24,21 @@ MongoClient.connect(connectionURL, { useNewUrlParser: true }, (error, client) =>
         console.log(result.ops)
     })
 
-    db.collection('users').insertMany([
-        {
-            name: 'Jen',
-            age: 28
-        }, {
-            name: 'Gunther',
-            age: 27
-        }
-    ], (error, result) => {
-        if (error) {
-            return console.log('Unable to insert documents!')
-        }
+    // db.collection('users').insertMany([
+    //     {
+    //         name: 'Jen',
+    //         age: 28
+    //     }, {
+    //         name: 'Gunther',
+    //         age: 27
+    //     }
+    // ], (error, result) => {
+    //     if (error) {
+    //         return console.log('Unable to insert documents!')
+    //     }
 
-        console.log(result.ops)
-    })
+    //     console.log(result.ops)
+    // })
 
     // db.collection('tasks').insertMany([
     //     {
