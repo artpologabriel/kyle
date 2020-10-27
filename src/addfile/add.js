@@ -1,4 +1,5 @@
 
+
 app.get('users').insertOne({
     name: 'Andrew',
     age: 27 ,
@@ -6,6 +7,4 @@ app.get('users').insertOne({
     level: 1
 })
 
-module.exports = add
-
-
+module.exports = db
