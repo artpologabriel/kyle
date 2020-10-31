@@ -1,17 +1,12 @@
+const path = require('path')
 const express = require('express')
 
 const app = express()
-//const port = process.env.PORT || 3000
-const port = 3000
 
-app.use(express.json())
-
-app.get('/', (req, res) => {
-   res.send('hello world')
+app.get('', (req, res) => {
+    res.render('hello world')
 })
 
-
-app.listen(port, () => {
-    console.log('Server is up on port ' + port)
+app.listen(3001, () => {
+    console.log('Server is up on port 3001.')
 })
-
