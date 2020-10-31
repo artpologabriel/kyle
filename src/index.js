@@ -1,15 +1,23 @@
-const path = require('path')
 const express = require('express')
+// require('./db/mongoose')
+// const User = require('./models/user')
 
 const app = express()
+const port = process.env.PORT || 3000
 
-const publicDirectoryPath = path.join(__dirname, '../public')
-app.use(express.static(publicDirectoryPath))
+app.use(express.json())
 
-app.get('', (req, res) => {
-    res.render('hello world')
+app.get('/', (req, res) => {
+    res.send('hello world')
+    // const user = new User(req.body)
+
+    // user.save().then(() => {
+    //     res.send(user)
+    // }).catch((e) => {
+    //     res.status(400).send(e)
+    // })
 })
 
-app.listen(3001, () => {
-    console.log('Server is up on port 3001.')
+app.listen(port, () => {
+    console.log('Server is up on port ' + port)
 })
